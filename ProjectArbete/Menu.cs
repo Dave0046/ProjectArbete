@@ -331,7 +331,7 @@ namespace ProjectArbete
             StreamWriter streamWriter = null;
             try
             {
-                streamWriter = new StreamWriter(@"c:\file.txt", false, Encoding.UTF8);
+                streamWriter = new StreamWriter(@"C:\file.txt", false, Encoding.UTF8);
                 foreach (Vehicle item in garage)
                 {
                     if (item is Car car2)
@@ -382,7 +382,7 @@ namespace ProjectArbete
             StreamReader reader = null;
             try
             {
-                reader = new StreamReader(@"c:\file.txt");
+                reader = new StreamReader(@"C:\file.txt");
                 string line;
                 while ((line = reader.ReadLine()) != null)
                 {
@@ -395,8 +395,19 @@ namespace ProjectArbete
                         case "buss":
                             garage.listOfVehicle.Add(new Buss(Convert.ToBoolean(fields[0]),Convert.ToInt32(fields[1]), fields[2], fields[3], fields[4], fields[5], 0));
                             break;
-                        
-                   }
+                        case "moped":
+                            garage.listOfVehicle.Add(new Moped(fields[0], Convert.ToInt32(fields[1]), fields[2], fields[3], fields[4], fields[5], 0));
+                            break;
+                        case "motorcycle":
+                            garage.listOfVehicle.Add(new MotorCycle(fields[0], Convert.ToInt32(fields[1]), fields[2], fields[3], fields[4], fields[5], 0));
+                            break;
+                        case "truck":
+                            garage.listOfVehicle.Add(new Truck(fields[0], Convert.ToBoolean(fields[1]), fields[2], fields[3], fields[4], fields[5], 0));
+                            break;
+                        default:
+                            break;
+
+                    }
                 }
             }
             catch (Exception exp)

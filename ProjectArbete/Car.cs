@@ -15,7 +15,7 @@ namespace ProjectArbete
 
         }
 
-        public Car(int _numberOfSeats, bool _combi, string _regnumber, string _color, string _brand, string _type, int _nrTires) 
+        public Car(int _numberOfSeats ,bool _combi,string _regnumber, string _color,string _brand,string _type,  int _nrTires) 
             : base(_regnumber, _color, _brand, _type, _nrTires)
         {
             NumberOfSeats = _numberOfSeats;
